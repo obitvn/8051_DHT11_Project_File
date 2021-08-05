@@ -1,0 +1,183 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              11/02/2018 15:37:36 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: F:\Cai phan mem\Keil C 8051\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS
+                    -(2)
+
+line level    source
+
+   1          /*
+   2           * DHT11 Interfacing with 8051
+   3           * http://www.electronicwings.com
+   4           */
+   5          
+   6          
+   7          #include<reg52.h>
+   8          #include<stdio.h>
+   9          #include<string.h>
+  10          #include <stdlib.h>
+  11          #include "LCD16x2_4bit.h"
+*** ERROR C231 IN LINE 13 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'P0': redefinition
+*** ERROR C231 IN LINE 14 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'P1': redefinition
+*** ERROR C231 IN LINE 15 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'P2': redefinition
+*** ERROR C231 IN LINE 16 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'P3': redefinition
+*** ERROR C231 IN LINE 17 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'PSW': redefinition
+*** ERROR C231 IN LINE 18 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'ACC': redefinition
+*** ERROR C231 IN LINE 19 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'B': redefinition
+*** ERROR C231 IN LINE 20 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'SP': redefinition
+*** ERROR C231 IN LINE 21 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'DPL': redefinition
+*** ERROR C231 IN LINE 22 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'DPH': redefinition
+*** ERROR C231 IN LINE 23 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'PCON': redefinition
+*** ERROR C231 IN LINE 24 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TCON': redefinition
+*** ERROR C231 IN LINE 25 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TMOD': redefinition
+*** ERROR C231 IN LINE 26 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TL0': redefinition
+*** ERROR C231 IN LINE 27 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TL1': redefinition
+*** ERROR C231 IN LINE 28 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TH0': redefinition
+*** ERROR C231 IN LINE 29 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TH1': redefinition
+*** ERROR C231 IN LINE 30 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'IE': redefinition
+*** ERROR C231 IN LINE 31 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'IP': redefinition
+*** ERROR C231 IN LINE 32 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'SCON': redefinition
+*** ERROR C231 IN LINE 33 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'SBUF': redefinition
+*** ERROR C231 IN LINE 38 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'CY': redefinition
+*** ERROR C231 IN LINE 39 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'AC': redefinition
+*** ERROR C231 IN LINE 40 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'F0': redefinition
+*** ERROR C231 IN LINE 41 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'RS1': redefinition
+*** ERROR C231 IN LINE 42 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'RS0': redefinition
+*** ERROR C231 IN LINE 43 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'OV': redefinition
+*** ERROR C231 IN LINE 44 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'P': redefinition
+*** ERROR C231 IN LINE 47 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TF1': redefinition
+*** ERROR C231 IN LINE 48 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TR1': redefinition
+*** ERROR C231 IN LINE 49 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TF0': redefinition
+*** ERROR C231 IN LINE 50 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TR0': redefinition
+*** ERROR C231 IN LINE 51 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'IE1': redefinition
+*** ERROR C231 IN LINE 52 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'IT1': redefinition
+*** ERROR C231 IN LINE 53 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'IE0': redefinition
+*** ERROR C231 IN LINE 54 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'IT0': redefinition
+*** ERROR C231 IN LINE 57 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'EA': redefinition
+*** ERROR C231 IN LINE 58 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'ES': redefinition
+*** ERROR C231 IN LINE 59 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'ET1': redefinition
+*** ERROR C231 IN LINE 60 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'EX1': redefinition
+*** ERROR C231 IN LINE 61 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'ET0': redefinition
+*** ERROR C231 IN LINE 62 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'EX0': redefinition
+*** ERROR C231 IN LINE 65 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'PS': redefinition
+C51 COMPILER V9.59.0.0   MAIN                                                              11/02/2018 15:37:36 PAGE 2   
+
+*** ERROR C231 IN LINE 66 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'PT1': redefinition
+*** ERROR C231 IN LINE 67 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'PX1': redefinition
+*** ERROR C231 IN LINE 68 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'PT0': redefinition
+*** ERROR C231 IN LINE 69 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'PX0': redefinition
+*** ERROR C231 IN LINE 72 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'RD': redefinition
+*** ERROR C231 IN LINE 73 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'WR': redefinition
+*** ERROR C231 IN LINE 74 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'T1': redefinition
+*** ERROR C231 IN LINE 75 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'T0': redefinition
+*** ERROR C231 IN LINE 76 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'INT1': redefinition
+*** ERROR C231 IN LINE 77 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'INT0': redefinition
+*** ERROR C231 IN LINE 78 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TXD': redefinition
+*** ERROR C231 IN LINE 79 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'RXD': redefinition
+*** ERROR C231 IN LINE 82 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'SM0': redefinition
+*** ERROR C231 IN LINE 83 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'SM1': redefinition
+*** ERROR C231 IN LINE 84 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'SM2': redefinition
+*** ERROR C231 IN LINE 85 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'REN': redefinition
+*** ERROR C231 IN LINE 86 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TB8': redefinition
+*** ERROR C231 IN LINE 87 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'RB8': redefinition
+*** ERROR C231 IN LINE 88 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'TI': redefinition
+*** ERROR C231 IN LINE 89 OF F:\Cai phan mem\Keil C 8051\C51\Inc\reg51.h: 'RI': redefinition
+  12          sbit DHT11=P2^4;    /* Connect DHT11 Sensor Pin to P2.1 Pin */
+  13          int I_RH,D_RH,I_Temp,D_Temp,CheckSum; 
+  14          
+  15          void timer_delay20ms()    /* Timer0 delay function */
+  16          {
+  17   1        TMOD = 0x01;
+  18   1        TH0 = 0xB8;       /* Load higher 8-bit in TH0 */
+  19   1        TL0 = 0x0C;       /* Load lower 8-bit in TL0 */
+  20   1        TR0 = 1;          /* Start timer0 */
+  21   1        while(TF0 == 0);  /* Wait until timer0 flag set */
+  22   1        TR0 = 0;          /* Stop timer0 */
+  23   1        TF0 = 0;          /* Clear timer0 flag */
+  24   1      }
+  25          
+  26          void timer_delay30us() /* Timer0 delay function */
+  27          {
+  28   1        TMOD = 0x01;      /* Timer0 mode1 (16-bit timer mode) */
+  29   1        TH0 = 0xFF;       /* Load higher 8-bit in TH0 */
+  30   1        TL0 = 0xF1;       /* Load lower 8-bit in TL0 */
+  31   1        TR0 = 1;          /* Start timer0 */
+  32   1        while(TF0 == 0);  /* Wait until timer0 flag set */
+  33   1        TR0 = 0;          /* Stop timer0 */
+  34   1        TF0 = 0;          /* Clear timer0 flag */
+  35   1      }
+  36          
+  37          void Request()      /* Microcontroller send start pulse or request */
+  38          {
+  39   1        DHT11 = 0;        /* set to low pin */
+  40   1        timer_delay20ms();/* wait for 20ms */
+  41   1        DHT11 = 1;        /* set to high pin */
+  42   1      }
+  43          
+  44          void Response()     /* receive response from DHT11 */
+  45          {
+  46   1        while(DHT11==1);
+  47   1        while(DHT11==0);
+  48   1        while(DHT11==1);
+  49   1      }
+  50          
+  51          int Receive_data()      /* receive data */
+  52          {
+  53   1        int q,c=0;  
+C51 COMPILER V9.59.0.0   MAIN                                                              11/02/2018 15:37:36 PAGE 3   
+
+  54   1        for (q=0; q<8; q++)
+  55   1        {
+  56   2          while(DHT11==0);    /* check received bit 0 or 1 */
+  57   2          timer_delay30us();
+  58   2          if(DHT11 == 1)      /* if high pulse is greater than 30ms */
+  59   2          c = (c<<1)|(0x01);  /* then its logic HIGH */
+  60   2          
+  61   2          else                /* otherwise its logic LOW */
+  62   2          c = (c<<1);
+  63   2          
+  64   2          while(DHT11==1);
+  65   2        }
+  66   1        return c;
+  67   1      }
+  68          
+  69          void main()
+  70          {
+  71   1        unsigned char dat[20];
+  72   1        LCD_Init();               /* initialize LCD */
+  73   1        
+  74   1      while(1)
+  75   1        {   
+  76   2          Request();              /* send start pulse */
+  77   2          Response();             /* receive response */
+  78   2          
+  79   2          I_RH=Receive_data();    /* store first eight bit in I_RH */   
+  80   2          D_RH=Receive_data();    /* store next eight bit in D_RH */  
+  81   2          I_Temp=Receive_data();  /* store next eight bit in I_Temp */
+  82   2          D_Temp=Receive_data();  /* store next eight bit in D_Temp */
+  83   2          CheckSum=Receive_data();/* store next eight bit in CheckSum */
+  84   2      
+  85   2          if ((I_RH + D_RH + I_Temp + D_Temp) != CheckSum)
+  86   2          {
+  87   3            LCD_String_xy(0,0,"Error");
+  88   3          }
+  89   2          
+  90   2          else
+  91   2          {
+  92   3            sprintf(dat,"Hum = %d.%d",I_RH,D_RH);
+  93   3            LCD_String_xy(0,0,dat);
+  94   3            sprintf(dat,"Tem = %d.%d",I_Temp,D_Temp);   
+  95   3            LCD_String_xy(1,0,dat);
+  96   3            LCD_Char(0xDF);
+  97   3            LCD_String("C");
+  98   3            memset(dat,0,20);
+  99   3            sprintf(dat,"%d   ",CheckSum);
+ 100   3            LCD_String_xy(1,13,dat);
+ 101   3          }   
+ 102   2          delay(100);
+ 103   2        } 
+ 104   1      }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  63 ERROR(S)
